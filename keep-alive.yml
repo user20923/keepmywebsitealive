@@ -1,0 +1,14 @@
+name: Supabase Keep Alive
+on:
+  schedule:
+    - cron: '0 0 */3 * *' # Automatically triggers every 3 days
+  workflow_dispatch:     # Allows you to click a button to run it manually
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase Data API Table
+        run: |
+          curl -X GET "https://supabase.co*" \
+          -H "apikey: sb_publishable_uBh5wFVQ126sN9C6ziQXTA_rveTlFJv"
